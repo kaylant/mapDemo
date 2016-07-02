@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,19 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u3S-bw-Yf2">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="u3S-bw-Yf2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="u3S-bw-Yf2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6Hx-l1-0ph"/>
-                            <constraint firstItem="u3S-bw-Yf2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="SrI-Ph-IHa"/>
-                            <constraint firstItem="u3S-bw-Yf2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="i3X-LA-B6M"/>
-                            <constraint firstItem="u3S-bw-Yf2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oCx-bg-GMO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="u3S-bw-Yf2" secondAttribute="trailing" constant="-20" id="oI1-T7-u0m"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="u3S-bw-Yf2" secondAttribute="bottom" id="xd1-ul-p7v"/>
-                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

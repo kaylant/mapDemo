@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67CF09181D27369000FDE539 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67CF09171D27369000FDE539 /* CoreLocation.framework */; };
 		67F838021D245E80003DBDC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F838011D245E80003DBDC0 /* AppDelegate.swift */; };
 		67F838041D245E80003DBDC0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F838031D245E80003DBDC0 /* ViewController.swift */; };
 		67F838071D245E80003DBDC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67F838051D245E80003DBDC0 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67CF09171D27369000FDE539 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		67F837FE1D245E80003DBDC0 /* mapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67F838011D245E80003DBDC0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67F838031D245E80003DBDC0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,6 +31,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CF09181D27369000FDE539 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +41,7 @@
 		67F837F51D245E80003DBDC0 = {
 			isa = PBXGroup;
 			children = (
+				67CF09171D27369000FDE539 /* CoreLocation.framework */,
 				67F838001D245E80003DBDC0 /* mapDemo */,
 				67F837FF1D245E80003DBDC0 /* Products */,
 			);
@@ -286,6 +290,7 @@
 				67F838121D245E80003DBDC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

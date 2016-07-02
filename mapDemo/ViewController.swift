@@ -11,13 +11,28 @@ import UIKit
 // import map kit framework
 import MapKit
 
+import CoreLocation
+
+
 // add a map view delegate
-class ViewController: UIViewController, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet var map: MKMapView!
     
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // GET USERS LOCATION
+        // edit info.plist first!
+        // also build phases
+        // add the new delegate CLLocation...
+        // import CoreLocation
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         
         // get coordinates easily from Google Maps, search for a location, right click "What's Here?" to retrieve coordinates
         // give varialbe type of CLLocationDegrees
@@ -58,7 +73,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // ui long press gesture recognizer
         // "action" is name of function to be run when user does a long press
         // : means gestureRecognizer will be sent
-        var uilpgr = UILongPressGestureRecognizer(target: self, action: "action:")
+        var uilpgr = UILongPressGestureRecognizer(target: self, action: #selector(ViewController.action(_:)))
         
         // number of seconds user has to hold the press
         uilpgr.minimumPressDuration = 2
@@ -66,6 +81,33 @@ class ViewController: UIViewController, MKMapViewDelegate {
         // add to the map, like before
         map.addGestureRecognizer(uilpgr)
         
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    
+        // note the simulater will populate with fake locations
+        print(locations)
+        
+        // extract location from the array
+        // center the map on the users location
+        var userLocation: CLLocation = locations[0]
+        
+        var latitude = userLocation.coordinate.latitude
+        
+        var longitude = userLocation.coordinate.longitude
+        
+        var latDelta:CLLocationDegrees = 0.05
+        
+        var lonDelta:CLLocationDegrees = 0.05
+        
+        var span:MKCoordinateSpan = MKCoordinateSpanMake(latDelta, lonDelta)
+        
+        var location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude, longitude)
+        
+        var region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+        
+        self.map.setRegion(region, animated: true)
+    
     }
     
     // action function, runs when long press is recognized
